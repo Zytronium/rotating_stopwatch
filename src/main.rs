@@ -1,3 +1,4 @@
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use freya::animation::{use_animation, OnFinish, AnimNum, OnCreation, Function};
 use freya::prelude::*;
@@ -389,7 +390,7 @@ fn app() -> impl IntoElement {
                                 .padding(6.)
                                 .child(
                                     label()
-                                        .text("Slightly Rotated Stopwatch")
+                                        .text("Slowly Rotating Window")
                                         .color(Color::WHITE)
                                         .font_size(12)
                                 )
