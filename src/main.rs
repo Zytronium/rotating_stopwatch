@@ -46,7 +46,7 @@ fn app() -> impl IntoElement {
     let center_anchor = use_state(|| None::<(f64, f64)>);
 
     // Prevent animation-driven positioning while the OS handles dragging.
-    let mut is_dragging = use_state(|| false);
+    let is_dragging = use_state(|| false);
 
     let rotation_animation = use_animation(|ctx| {
         ctx.on_creation(OnCreation::Run);
