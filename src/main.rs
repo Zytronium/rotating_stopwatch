@@ -19,7 +19,7 @@ const TITLEBAR_HEIGHT: f64 = 30.0;
 const BUTTON_WIDTH: f64 = 42.0;
 const BUTTONS_WIDTH: f64 = BUTTON_WIDTH * 3.0;
 const ROTATION_SPEED: f32 = 5.0;
-const ROTATION_DURATION: u64 = (365.0 / ROTATION_SPEED as f64 * 500.0) as u64;
+const ROTATION_DURATION: u64 = (360.0 / ROTATION_SPEED as f64 * 500.0) as u64;
 const WINDOW_PADDING: f64 = 16.0;
 
 fn main() {
@@ -53,7 +53,7 @@ fn app() -> impl IntoElement {
         ctx.on_creation(OnCreation::Run);
         ctx.on_finish(OnFinish::restart());
 
-        AnimNum::new(0.0, 365.0)
+        AnimNum::new(0.0, 360.0)
             .time(ROTATION_DURATION)
             .function(Function::Linear)
     });
